@@ -1,0 +1,18 @@
+perception_node:
+  ros__parameters:
+    # OAK-D Configuration
+    use_mock_mode: false
+    
+    # Model paths (relative to package or absolute)
+    # These models run on OAK-D Lite's TPU for acceleration
+    person_model_path: "models/mobilenet-ssd_openvino_2021.4_6shave.blob"
+    rps_model_path: "models/hand_gesture_rps_openvino_2021.4_6shave.blob"
+    
+    # Person Detection
+    target_distance: 1.0  # meters
+    person_confidence_threshold: 0.5
+    
+    # Obstacle Detection
+    obstacle_threshold: 0.5  # meters
+    obstacle_roi_width: 0.3  # fraction of image width (center region)
+    obstacle_roi_height: 0.4  # fraction of image height (center region)

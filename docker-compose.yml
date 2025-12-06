@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  robocar:
+    image: djnighti/ucsd_robocar:x86  # Change to :devel for ARM/Jetson
+    container_name: oakd_vision_robocar
+    privileged: true
+    network_mode: host
+    environment:
+      - DISPLAY=${DISPLAY}
+    volumes:
+      # X11 forwarding
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      # Device access (for OAK-D camera)
+      - /dev:/dev
+      # Mount workspace (adjust path as needed)
+      - ~/ros2_ws:/home/ros/ros2_ws
+      # Mount project directory (adjust ./ to your project path)
+      # This allows editing files on host and using them in container
+      - .:/home/ros/oakd_vision_project
+    stdin_open: true
+    tty: true
+    # Keep container running
+    command: tail -f /dev/null
+

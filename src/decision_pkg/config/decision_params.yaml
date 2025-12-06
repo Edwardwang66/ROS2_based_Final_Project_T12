@@ -1,0 +1,20 @@
+decision_node:
+  ros__parameters:
+    # Target Configuration
+    target_distance: 1.0  # meters
+    target_distance_tolerance: 0.2  # meters
+    alignment_tolerance: 0.1  # fraction of image width
+    
+    # Speed Limits
+    max_linear_speed: 0.5  # m/s
+    max_angular_speed: 1.0  # rad/s
+    search_angular_speed: 0.5  # rad/s
+    
+    # Control Gains
+    k_linear: 0.5  # Proportional gain for distance control
+    k_angular: 1.0  # Proportional gain for angle control
+    
+    # Back Off Configuration
+    back_off_duration: 2.0  # seconds
+    back_off_speed: -0.2  # m/s (negative = backward)
+

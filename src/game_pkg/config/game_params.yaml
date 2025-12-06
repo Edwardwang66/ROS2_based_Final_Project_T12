@@ -1,0 +1,7 @@
+game_node:
+  ros__parameters:
+    # Game Configuration
+    total_rounds: 3
+    gesture_timeout: 5.0  # seconds
+    round_delay: 2.0  # seconds between rounds
+
